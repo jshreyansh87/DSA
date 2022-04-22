@@ -1,0 +1,27 @@
+// Problem Statement => https://leetcode.com/problems/design-hashmap/submissions/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class MyHashMap {
+public:
+    vector <int> v;
+    MyHashMap() {
+        v.resize(1e6 + 1, -1);
+    }
+    
+    void put(int key, int value) {
+        v[key] = value;
+    }
+    
+    int get(int key) {
+        if(v[key] != -1)
+            return v[key];
+        
+        return -1;
+    }
+    
+    void remove(int key) {
+        v[key] = -1;
+    }
+};
