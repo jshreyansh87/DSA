@@ -21,13 +21,15 @@ int partition(int *arr, int s, int e){
     // put all elements greater than pivot on its right
     int i = s, j = e;
     while(i < pivotIndex && j > pivotIndex){
+        // increment i if arr[i] <= pivot
         while(arr[i] <= pivot){
             i++;
         }
+        // decrement j if arr[i] <= pivot
         while(arr[j] > pivot){
             j--;
         }
-
+        // swap element at index i and j
         if(i < pivotIndex && j > pivotIndex){
             swap(arr[i++], arr[j--]);
         }
